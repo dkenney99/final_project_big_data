@@ -1,9 +1,9 @@
-// src/server.js
 const path = require("path");
 const express = require("express");
 const cors = require("cors");
 
 const feedbackRoutes = require("./routes/feedbackRoutes");
+const { startWorkerLoop } = require("./worker/startWorker");
 require("./db"); // ensure DB is initialized
 
 const app = express();
@@ -25,6 +25,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(publicDir, "index.html"));
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+
+  // Start the worker loop in the same process
+  startWorkerLoop(3000);
 });

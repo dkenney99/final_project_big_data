@@ -5,13 +5,12 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "worker": "node src/worker/feedbackWorker.js",
     "test": "jest"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.1",
-    "sqlite3": "^5.1.7",
-    "cors": "^2.8.5"
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "jest": "^29.7.0",
