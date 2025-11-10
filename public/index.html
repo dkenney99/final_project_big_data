@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Feedback Analyzer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      max-width: 900px;
+    }
+    h1, h2 {
+      margin-bottom: 0.5rem;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    input[type="text"], textarea, select {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 12px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      font-size: 0.9rem;
+    }
+    th {
+      background-color: #f5f5f5;
+    }
+    .status {
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Course Feedback Analyzer</h1>
+
+  <div class="card">
+    <h2>Submit Feedback</h2>
+    <form id="feedbackForm">
+      <label>
+        Name (optional)
+        <input type="text" id="name">
+      </label>
+      <label>
+        Course Code
+        <input type="text" id="courseCode" required>
+      </label>
+      <label>
+        Rating (1 - 5)
+        <select id="rating">
+          <option value="1">1 - Very poor</option>
+          <option value="2">2</option>
+          <option value="3" selected>3</option>
+          <option value="4">4</option>
+          <option value="5">5 - Excellent</option>
+        </select>
+      </label>
+      <label>
+        Comments
+        <textarea id="comments" rows="3"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+      <div id="submitStatus" class="status"></div>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Reports</h2>
+    <label>
+      Course Code
+      <input type="text" id="reportCourseCode" placeholder="e.g. CS550">
+    </label>
+    <button id="loadReportBtn">Load Report</button>
+    <div id="statsArea" class="status"></div>
+
+    <h3>Feedback List</h3>
+    <div id="feedbackTableContainer"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

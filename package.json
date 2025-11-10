@@ -1,0 +1,20 @@
+{
+  "name": "bigdata-final-project",
+  "version": "1.0.0",
+  "description": "Course Feedback Analyzer - Big Data Architecture Final Project",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "worker": "node src/worker/feedbackWorker.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "sqlite3": "^5.1.7",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.1"
+  }
+}
